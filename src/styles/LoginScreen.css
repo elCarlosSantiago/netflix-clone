@@ -1,0 +1,111 @@
+.loginScreen {
+  position: relative;
+  height: 100%;
+  background: url('https://assets.nflxext.com/ffe/siteui/vlv3/757ab38f-5d08-40bc-b3eb-eaba63ed8203/93c34f94-56c8-40a7-8b2e-b4aac6427977/GB-en-20210125-popsignuptwoweeks-perspective_alpha_website_medium.jpg')
+    center no-repeat;
+  background-size: cover;
+}
+
+.loginScreen-button {
+  position: fixed;
+  right: 22px;
+  top: 25px;
+  padding: 8px 15px;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #e50914;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4vh;
+}
+
+.loginScreen-gradient {
+  width: 100%;
+  z-index: 1;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.loginScreen-logo {
+  position: fixed;
+  left: 0;
+  width: 150px;
+  object-fit: contain;
+  padding-left: 20px;
+}
+
+.loginScreen-body {
+  position: absolute;
+  top: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+  padding: 20px;
+}
+
+.loginScreen-body h1 {
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+}
+.loginScreen-body h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.loginScreen-body h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.loginScreen-input form input {
+  padding: 10px;
+  outline-width: 0;
+  height: 30px;
+  width: 30%;
+  border: none;
+  max-width: 600px;
+  font-size: 1.5rem;
+  border-radius: 0.4vh;
+  margin-right: 0.5rem;
+}
+
+.loginScreen-input {
+  margin: 20px;
+  font-size: inherit;
+}
+
+.loginScreen-getStarted {
+  padding: 14px 20px 16px;
+  border-left: 100px solid black;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  border-radius: 0.4vh;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .loginScreen-input form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+  }
+  .loginScreen-input form input {
+    width: 70%;
+    margin-bottom: 2%;
+  }
+}
