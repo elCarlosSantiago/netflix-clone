@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import db from '../firebase';
 import './../styles/PlansScreen.css';
 import { loadStripe } from '@stripe/stripe-js';
-import { selectUser } from './../features/userSlice';
+import { selectUser, subscribe } from './../features/userSlice';
 
 function PlansScreen() {
   const [products, setProducts] = useState([]);
   const user = useSelector(selectUser);
   const [subscription, setSubscription] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     db.collection('customers')
@@ -23,11 +24,10 @@ function PlansScreen() {
             current_period_start: subscription.data().current_period_start
               .seconds,
           });
+          dispatch(subscribe(subscription.data().role));
         });
       });
   }, [user.uid]);
-
-  console.log(subscription);
 
   useEffect(() => {
     db.collection('products')
